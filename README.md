@@ -1,4 +1,4 @@
-# Project Turkey Takeover
+# Project Mascot Masacre
 
 [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet)
 
@@ -17,7 +17,7 @@
 
 ### Game Description
 
-OH NO! Thanksgiving is fighting back. After years of terror, the turkeys finally decide to celebrate. Play as a war hungry chicken and stop the human's reign. 
+"Lanky Loops!" an iconic Cereal that rakes in more money then the GDP of the USA! Play as Blordo the Giraffe who is jealous of his corprate overlords for stealing all of HIS money! Fight your way up to their intergalatic penthouse and take whats yours!
 
 ### Controls
 
