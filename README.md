@@ -1,31 +1,31 @@
-# Project PROJECT_NAME
+# Project Turkey Takeover
 
 [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet)
 
 ### Student Info
 
--   Name: YOUR NAME
--   Section: ##
+-   Name: Jonathan Ciottone
+-   Section: 05
 
 ## Game Design
 
--   Camera Orientation: _How are the art assets viewed from? (ie. topdown or side)_
--   Camera Movement: _How does the camera move in your game? (if at all)_
--   Player Health: _How are you handling player health? (healthbar, lives, ?)_
--   End Condition: _How does a game/round/level end?_
--   Scoring: _How does the player earn points in your game?_
+-   Camera Orientation: side view 
+-   Camera Movement: Follows Player
+-   Player Health: Health Bar with 3 lives
+-   End Condition: When you kill the boss
+-   Scoring: by collecting "coins" the enemy drops
 
 ### Game Description
 
-_A brief explanation of your game. Inculde what is the objective for the player. Think about what would go on the back of a game box._
+OH NO! Thanksgiving is fighting back. After years of terror, the turkeys finally decide to celebrate. Play as a war hungry chicken and stop the human's reign. 
 
 ### Controls
 
 -   Movement
-    -   Up: 
-    -   Down: 
-    -   Left: 
-    -   Right: 
+    -   Up: w
+    -   Down: s
+    -   Left: a
+    -   Right: d
 -   Fire: 
 
 ## You Additions
