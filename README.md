@@ -30,7 +30,7 @@
 
 ## You Additions
 
-_List out what you added to your game to make it different for you_
+This game will feature 3 mini bosses that will change the core gameplay. A example being one will initaite a chase sequence. In addition this game will have a variety of enemies.
 
 ## Sources
 
