@@ -13,7 +13,7 @@
 -   Camera Movement: Follows Player 
 -   Player Health: Health Bar with 3 lives
 -   End Condition: When you kill the boss
--   Scoring: by collecting cereal boxes the enemy drops
+-   Scoring: by collecting cereal boxes the enemy drops 
 
 ### Game Description
 
