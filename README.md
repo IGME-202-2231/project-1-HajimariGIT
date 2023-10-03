@@ -26,11 +26,12 @@
     -   Down: s
     -   Left: a
     -   Right: d
--   Fire: 
+-   Fire: right click
 
 ## You Additions
 
-This game will feature 3 mini bosses that will change the core gameplay. A example being one will initaite a chase sequence. In addition this game will have a variety of enemies.
+This game will feature 3 mini bosses that will change the core gameplay. A example being one will initaite a chase sequence. 
+In addition this game will have a variety of enemies. You will be able to shoot in arc according to a set radius. Aiming will be done with the mouse
 
 ## Sources
 
