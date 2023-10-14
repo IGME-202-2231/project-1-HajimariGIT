@@ -7,7 +7,7 @@ public class CollisionManager : MonoBehaviour
 {
     //controls collidables on screen and stores
     [SerializeField]
-    List<SpriteInfo> collideables = new List<SpriteInfo>();
+    public List<SpriteInfo> collideables = new List<SpriteInfo>();
     //contros what equation to use
     bool control=true;
     //controls text
@@ -58,6 +58,7 @@ public class CollisionManager : MonoBehaviour
         //compare each object with each object 
         for (int i = 0; i < collideables.Count - 1; i++)
         {
+
             for (int j = i + 1; j < collideables.Count; j++)
             {
                 //store them
@@ -182,6 +183,11 @@ public class CollisionManager : MonoBehaviour
         
 
 
+    }
+
+    public void AddSprite(SpriteInfo sprite)
+    {
+        collideables.Add(sprite);
     }
 
 

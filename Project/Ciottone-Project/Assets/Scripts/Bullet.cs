@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -8,10 +9,19 @@ public class Bullet : MonoBehaviour
     [SerializeField] float speed = 13f;
     [SerializeField] GameObject spawn;
     private bool bulletInTravel;
-    GameObject bullet;
-    List<GameObject> bulletList;
+    List<GameObject> bulletList = new List<GameObject>();
     private float totalCamheight;
     private float totalCamwidth;
+   public CollisionManager collisionManager;
+    SpriteInfo spriteInfo =  new SpriteInfo();
+    bool isBullet;
+
+    public bool IsBullet
+    {
+        get { return isBullet; }
+        set { value = isBullet; }
+    }
+    
 
 
 
@@ -27,6 +37,8 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
+
         if (Input.GetMouseButtonDown(0))
         {
             
@@ -34,44 +46,54 @@ public class Bullet : MonoBehaviour
 
           
 
-             bullet = Instantiate(bulletIntake, spawnPos, Quaternion.identity);
+             GameObject bullet = Instantiate(bulletIntake, spawnPos, Quaternion.identity);
              bulletList.Add(bullet);
 
-            
+            SpriteInfo bulletSpriteInfo = bullet.GetComponent<SpriteInfo>();
+            collisionManager.AddSprite(bulletSpriteInfo);
+
+
+
+
+
 
 
         }
 
-        if(bulletInTravel != null)
+        for (int i = 0; i < bulletList.Count; i++)
         {
-         
-
-            Vector3 direction = Vector3.right;
-            bullet.transform.Translate(direction * speed * Time.deltaTime);
+            Vector3 direction = Vector3.right; // Move in the x-direction
+            Vector3 bulletPosition = bulletList[i].transform.position;
+            bulletPosition += direction * speed * Time.deltaTime;
+            bulletList[i].transform.position = bulletPosition;
+           
         }
+
+       // BulletCleanUp();
     }
 
-   /* public void BulletCleanUp()
+    /*public void BulletCleanUp()
     {
-       foreach(GameObject b in bulletList)
+      for(int i =0; i < bulletList.Count; i++)
        {
-            if (b.y > totalCamheight / 2f)
+            if (bulletList[i].transform.position.y> totalCamheight / 2f)
             {
-                objectPosition = new Vector3(objectPosition.x, -totalCamheight / 2f, objectPosition.z);
+                Destroy(bulletList[i]);
             }
-            else if (objectPosition.y < -totalCamheight / 2f)
+            else if (bulletList[i].transform.position.y < -totalCamheight / 2f)
             {
-                objectPosition = new Vector3(objectPosition.x, totalCamheight / 2f, objectPosition.z);
+                Destroy(bulletList[i]);
             }
 
-            if (objectPosition.x > totalCamwidth / 2f)
+            if (bulletList[i].transform.position.x > totalCamwidth / 2f)
             {
-                objectPosition = new Vector3(-totalCamwidth / 2f, objectPosition.y, objectPosition.z);
+                Destroy(bulletList[i]);
             }
-            else if (objectPosition.x < -totalCamwidth / 2f)
+            else if (bulletList[i].transform.position.x < -totalCamwidth / 2f)
             {
-                objectPosition = new Vector3(totalCamwidth / 2f, objectPosition.y, objectPosition.z);
+                Destroy(bulletList[i]);
             }
+            
         }
         
         

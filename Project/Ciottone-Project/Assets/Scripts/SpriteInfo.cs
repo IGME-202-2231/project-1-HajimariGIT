@@ -13,6 +13,14 @@ public class SpriteInfo : MonoBehaviour
     [SerializeField] Vector2 ractSize = Vector2.one;
     //refrebce if needed
     CollisionManager test = new CollisionManager();
+    bool isCollidable=true;
+
+
+    public bool Collidable
+    {
+        get { return isCollidable; }
+        set { isCollidable = value; }
+    }
 
     /// <summary>
     /// property for radius 
@@ -68,6 +76,11 @@ public class SpriteInfo : MonoBehaviour
       {
             renderer.color = Color.white;
       }
+    }
+
+    public void IsCollidable()
+    {
+
     }
     
 
