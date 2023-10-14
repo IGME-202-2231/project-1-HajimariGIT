@@ -298,8 +298,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Enemy: {fileID: 283370391}
   number: 0
-  amp: 5
-  speed: 5
+  amp: 2
+  speed: 2
+  spawn: {fileID: 283370389}
   abillity: 2
 --- !u!212 &283370392 stripped
 SpriteRenderer:
@@ -340,31 +341,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7753371283880013474, guid: 0ff33778ddb7f624abe7457a62120c5b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.7112308
+      value: 7.76
       objectReference: {fileID: 0}
     - target: {fileID: 7753371283880013474, guid: 0ff33778ddb7f624abe7457a62120c5b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.36978
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 7753371283880013474, guid: 0ff33778ddb7f624abe7457a62120c5b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.16
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7753371283880013474, guid: 0ff33778ddb7f624abe7457a62120c5b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.021523543
+      value: -0.019040225
       objectReference: {fileID: 0}
     - target: {fileID: 7753371283880013474, guid: 0ff33778ddb7f624abe7457a62120c5b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.6307603
+      value: 0.72706395
       objectReference: {fileID: 0}
     - target: {fileID: 7753371283880013474, guid: 0ff33778ddb7f624abe7457a62120c5b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7754816
+      value: -0.686009
       objectReference: {fileID: 0}
     - target: {fileID: 7753371283880013474, guid: 0ff33778ddb7f624abe7457a62120c5b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.017506795
+      value: 0.020179711
       objectReference: {fileID: 0}
     - target: {fileID: 7753371283880013474, guid: 0ff33778ddb7f624abe7457a62120c5b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -376,7 +377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7753371283880013474, guid: 0ff33778ddb7f624abe7457a62120c5b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -78.248
+      value: -93.328
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -444,8 +445,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Enemy: {fileID: 1076503809}
   number: 0
-  amp: 5
-  speed: 5
+  amp: 2
+  speed: 2
+  spawn: {fileID: 1076503807}
   abillity: 1
 --- !u!212 &1076503810 stripped
 SpriteRenderer:
@@ -485,8 +487,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Enemy: {fileID: 1146843716}
   number: 0
-  amp: 5
-  speed: 5
+  amp: 2
+  speed: 2
+  spawn: {fileID: 1146843714}
   abillity: 1
 --- !u!212 &1146843717 stripped
 SpriteRenderer:
@@ -619,15 +622,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7753371283880013474, guid: 0ff33778ddb7f624abe7457a62120c5b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.38
+      value: -5.7
       objectReference: {fileID: 0}
     - target: {fileID: 7753371283880013474, guid: 0ff33778ddb7f624abe7457a62120c5b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.67
+      value: 3.23
       objectReference: {fileID: 0}
     - target: {fileID: 7753371283880013474, guid: 0ff33778ddb7f624abe7457a62120c5b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.25
+      value: -0.59
       objectReference: {fileID: 0}
     - target: {fileID: 7753371283880013474, guid: 0ff33778ddb7f624abe7457a62120c5b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -818,15 +821,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7753371283880013474, guid: 0ff33778ddb7f624abe7457a62120c5b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.86
+      value: 0.73
       objectReference: {fileID: 0}
     - target: {fileID: 7753371283880013474, guid: 0ff33778ddb7f624abe7457a62120c5b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.18
+      value: -2.98
       objectReference: {fileID: 0}
     - target: {fileID: 7753371283880013474, guid: 0ff33778ddb7f624abe7457a62120c5b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.39
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7753371283880013474, guid: 0ff33778ddb7f624abe7457a62120c5b, type: 3}
       propertyPath: m_LocalRotation.w
