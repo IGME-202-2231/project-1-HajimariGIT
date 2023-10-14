@@ -13,19 +13,43 @@ public class MovementController : MonoBehaviour
     private float totalCamheight;
     int test;
     private float totalCamwidth;
-  
+    [SerializeField] GameObject bullet;
+    Vector3 bulletPos;
+    bool bulletActive = false;
+    
+
     void Start()
     {
         objectPosition = transform.position;
         totalCamheight = 2f * Camera.main.orthographicSize;
         totalCamwidth = totalCamheight * Camera.main.aspect;
         direction = Vector3.zero;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-       velocity = direction * speed * Time.deltaTime;
+        bulletPos = new Vector3(objectPosition.y, objectPosition.x);
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            //change the state of game to opposite equation 
+
+            Instantiate(bullet, bulletPos, Quaternion.identity);
+            bulletActive = true;
+
+            if(bulletActive)
+            {
+                bulletPos += Vector3.forward;
+                bullet.transform.position = bulletPos;
+            }
+        }
+
+
+
+
+        velocity = direction * speed * Time.deltaTime;
        objectPosition += velocity;
 
         if (objectPosition.y > totalCamheight / 2f)
@@ -62,10 +86,7 @@ public class MovementController : MonoBehaviour
       {
             direction = input;
 
-            if (input != Vector2.zero)
-            {
-                transform.rotation = Quaternion.LookRotation(Vector3.forward, input);
-            }
+            
 
         }
         
