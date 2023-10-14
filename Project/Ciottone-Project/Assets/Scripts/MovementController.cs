@@ -13,9 +13,7 @@ public class MovementController : MonoBehaviour
     private float totalCamheight;
     int test;
     private float totalCamwidth;
-    [SerializeField] GameObject bullet;
-    Vector3 bulletPos;
-    bool bulletActive = false;
+   
     
 
     void Start()
@@ -30,21 +28,7 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bulletPos = new Vector3(objectPosition.y, objectPosition.x);
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            //change the state of game to opposite equation 
-
-            Instantiate(bullet, bulletPos, Quaternion.identity);
-            bulletActive = true;
-
-            if(bulletActive)
-            {
-                bulletPos += Vector3.forward;
-                bullet.transform.position = bulletPos;
-            }
-        }
+       
 
 
 
