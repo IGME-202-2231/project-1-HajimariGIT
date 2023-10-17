@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     {
         get { return number; }
         set { number = value; }
-    }
+    } 
     void Start()
     {
         spawnPos = spawn.transform.position;
