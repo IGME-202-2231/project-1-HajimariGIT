@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
     SpriteInfo spriteInfo =  new SpriteInfo();
     bool isBullet;
 
-    public bool IsBullet
+    public bool IsPlayerBullet
     {
         get { return isBullet; }
         set { value = isBullet; }

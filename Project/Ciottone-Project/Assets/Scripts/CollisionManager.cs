@@ -74,22 +74,19 @@ public class CollisionManager : MonoBehaviour
 
                     if (isColliding)
                     {
-                        //set both to true 
-                        spriteA.IsColliding = true;
-                        spriteB.IsColliding = true;
-                    }
-                }
-                else
-                {
-                   isColliding= Circle(spriteA, spriteB);
+                        if (spriteA.IsPlayer == false && spriteB.isBullet == false || spriteB.IsPlayer == false && spriteA.isBullet == false)
+                        {
+                            //have to know if player
+                            //have to know if bullet
+                            //set both to true 
+                            spriteA.IsColliding = true;
+                            spriteB.IsColliding = true;
+                        }
 
-                    if (isColliding)
-                    {
-                        //set both to true 
-                        spriteA.IsColliding = true;
-                        spriteB.IsColliding = true;
+                        
                     }
                 }
+              
 
                 //otherwise 
 

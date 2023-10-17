@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7753371283880013474}
   - component: {fileID: 6412322757424751213}
+  - component: {fileID: 5704061141217774852}
+  - component: {fileID: -3607915911283756714}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Untagged
@@ -25,12 +27,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4394295492164363228}
   m_LocalRotation: {x: -0, y: -0.9996151, z: -0, w: -0.02774438}
-  m_LocalPosition: {x: 3.1, y: 2.53, z: -0.16}
-  m_LocalScale: {x: 0.37955517, y: 0.37955517, z: 0.37955517}
+  m_LocalPosition: {x: -2.2753882, y: 2.876275, z: -0.16}
+  m_LocalScale: {x: 0.22523184, y: 0.22523184, z: 0.22523184}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -183.18, z: 0}
 --- !u!212 &6412322757424751213
 SpriteRenderer:
@@ -84,3 +86,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5704061141217774852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4394295492164363228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c5f47b18cea84f4abc944d776b870f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Enemy: {fileID: 5704061141217774852}
+  number: 0
+  amp: 0.5
+  speed: 2
+  spawn: {fileID: 4394295492164363228}
+  abillity: 
+  health: 0
+--- !u!114 &-3607915911283756714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4394295492164363228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a02ff20e8b4c84c9f36c23049fdb6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 6412322757424751213}
+  ractSize: {x: 1, y: 1}
+  isBullet: 0
+  isPlayer: 0
+  isEnemy: 1
+  isEnemyBullet: 0

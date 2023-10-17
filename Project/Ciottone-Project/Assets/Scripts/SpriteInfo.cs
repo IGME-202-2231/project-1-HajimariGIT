@@ -13,7 +13,39 @@ public class SpriteInfo : MonoBehaviour
     [SerializeField] Vector2 ractSize = Vector2.one;
     //refrebce if needed
     CollisionManager test = new CollisionManager();
-    bool isCollidable=true;
+    bool isCollidable=true; 
+    //make enums
+    public bool isBullet;
+    public bool isPlayer;
+    public bool isEnemy;
+    public bool isEnemyBullet;
+
+    public bool IsPlayerBullet
+    {
+        get { return isBullet; }
+        set { value = isBullet; }
+    }
+
+    public bool IsPlayer
+    {
+        get { return isPlayer; }
+        set { value = isPlayer; }
+    }
+
+    public bool IsEnemy
+    {
+        get { return isEnemy; }
+        set { value = isEnemy; }
+    }
+
+
+
+    public bool IsEnemyBullet
+    {
+       get { return isEnemyBullet; }
+       set { value = isEnemyBullet; }
+    }
+
 
 
     public bool Collidable

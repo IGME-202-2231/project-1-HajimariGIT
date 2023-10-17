@@ -15,6 +15,9 @@ public class Enemy : MonoBehaviour
     Vector3 spawnPos;
     public string abillity;
     bool movingUp;
+    Vector3 direcion;
+    public int health;
+    
 
     public int Number
     {
@@ -30,24 +33,22 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(abillity == "1")
-       {
-            float upAndDown = spawnPos.y + Mathf.Sin(Time.time * speed) * amp;
-            transform.position = new Vector3(transform.position.x, upAndDown, transform.position.z);
+        ///abilltiy determinds spawn 
+        /////random direction via vector
 
-           
-                
-           
-       }
+        Vector3 move = transform.position;
+        float y = move.y - speed * Time.deltaTime;
+        transform.position = new Vector3(transform.position.x, y, transform.position.x);
 
-       if(abillity == "2")
-       {
-           
-            float leftAndRight = spawnPos.x + Mathf.Cos(Time.time * speed) * amp;
-            transform.position = new Vector3(leftAndRight, transform.position.y, transform.position.z);
-       }
+
+
+
        
-       
+
+        
+
+
+
 
 
     }
