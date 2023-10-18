@@ -17,7 +17,9 @@ public class Enemy : MonoBehaviour
     bool movingUp;
     Vector3 direcion;
     public int health;
-    
+    private float totalCamwidth;
+    private float totalCamheight;
+
 
     public int Number
     {
@@ -39,7 +41,16 @@ public class Enemy : MonoBehaviour
         Vector3 move = transform.position;
         float y = move.y - speed * Time.deltaTime;
         transform.position = new Vector3(transform.position.x, y, transform.position.x);
+
+
        
+         if (transform.position.y < -totalCamheight / 2f)
+         {
+            transform.position = new Vector3(transform.position.x, totalCamheight / 2f, transform.position.z);
+         }
+
+        
+
 
 
 
@@ -54,7 +65,7 @@ public class Enemy : MonoBehaviour
 
     }
 
-    
 
-    
+
+
 }

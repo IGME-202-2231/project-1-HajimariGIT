@@ -12,6 +12,7 @@ public class CollisionManager : MonoBehaviour
     //contros what equation to use
     bool control=true;
     public List<GameObject> gameObjects = new List<GameObject>();
+    public EnemyManager enemyManager = new EnemyManager();
     //controls text
 
     // Start is called before the first frame update
@@ -92,6 +93,7 @@ public class CollisionManager : MonoBehaviour
                           {
                             gameObjects.Add(spriteA.gameObject);
                             collideables.RemoveAt(i);
+                            enemyManager.enemies.Remove(spriteA.gameObject);
                            
                             
                            
@@ -101,6 +103,7 @@ public class CollisionManager : MonoBehaviour
                          {
                             gameObjects.Add(spriteB.gameObject);
                             collideables.RemoveAt(j);
+                            enemyManager.enemies.Remove(spriteA.gameObject);
 
 
 
