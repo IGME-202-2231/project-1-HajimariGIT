@@ -99,3 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderer: {fileID: 0}
   ractSize: {x: 1, y: 1}
+  isBullet: 0
+  isPlayer: 0
+  isEnemy: 0
+  isEnemyBullet: 0
+  type: 1

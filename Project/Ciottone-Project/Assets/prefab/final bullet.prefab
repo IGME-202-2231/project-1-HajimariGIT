@@ -100,6 +100,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderer: {fileID: 0}
   ractSize: {x: 1, y: 1}
+  isBullet: 0
+  isPlayer: 0
+  isEnemy: 0
+  isEnemyBullet: 0
+  type: 1
 --- !u!114 &3411132831602040426
 MonoBehaviour:
   m_ObjectHideFlags: 0

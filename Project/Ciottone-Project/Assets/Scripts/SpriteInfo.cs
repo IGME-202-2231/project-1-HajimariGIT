@@ -19,6 +19,17 @@ public class SpriteInfo : MonoBehaviour
     public bool isPlayer;
     public bool isEnemy;
     public bool isEnemyBullet;
+    public Enemy enemy;
+
+    public enum typeState
+    {
+        Player,
+        PlayerBullet,
+        Enemy,
+        EnemyBullet
+    }
+
+    public typeState type;
 
     public bool IsPlayerBullet
     {
@@ -113,6 +124,11 @@ public class SpriteInfo : MonoBehaviour
     public void IsCollidable()
     {
 
+    }
+
+    public void health()
+    {
+        
     }
     
 

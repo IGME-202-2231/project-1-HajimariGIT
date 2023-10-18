@@ -35,21 +35,26 @@ public class Enemy : MonoBehaviour
     {
         ///abilltiy determinds spawn 
         /////random direction via vector
-
+ 
         Vector3 move = transform.position;
         float y = move.y - speed * Time.deltaTime;
         transform.position = new Vector3(transform.position.x, y, transform.position.x);
-
-
-
-
        
 
-        
+
+
+
+
+
+
 
 
 
 
 
     }
+
+    
+
+    
 }

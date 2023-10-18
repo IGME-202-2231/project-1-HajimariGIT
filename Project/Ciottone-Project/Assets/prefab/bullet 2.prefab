@@ -103,3 +103,4 @@ MonoBehaviour:
   isPlayer: 0
   isEnemy: 0
   isEnemyBullet: 0
+  type: 1

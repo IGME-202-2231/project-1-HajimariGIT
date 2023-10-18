@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CollisionManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class CollisionManager : MonoBehaviour
     public List<SpriteInfo> collideables = new List<SpriteInfo>();
     //contros what equation to use
     bool control=true;
+    public List<GameObject> gameObjects = new List<GameObject>();
     //controls text
 
     // Start is called before the first frame update
@@ -34,7 +36,6 @@ public class CollisionManager : MonoBehaviour
 
         //check state/text and change accordingly
 
-        CheckState();
 
         //assign a staring value of false
 
@@ -45,6 +46,7 @@ public class CollisionManager : MonoBehaviour
 
         //check for collisions
         onTouch();
+        dead();
 
        
        
@@ -68,24 +70,52 @@ public class CollisionManager : MonoBehaviour
                 //assume they are not collding 
                 bool isColliding = false;
                 //if control is false
-                if (control == false)
-                {
+               
+                
                     isColliding = AABBCheck(spriteA, spriteB);
 
                     if (isColliding)
                     {
-                        if (spriteA.IsPlayer == false && spriteB.isBullet == false || spriteB.IsPlayer == false && spriteA.isBullet == false)
+                        if (spriteA.type == SpriteInfo.typeState.PlayerBullet && spriteB.type == SpriteInfo.typeState.Enemy || (spriteB.type == SpriteInfo.typeState.PlayerBullet && spriteA.type == SpriteInfo.typeState.Enemy))
                         {
                             //have to know if player
                             //have to know if bullet
                             //set both to true 
                             spriteA.IsColliding = true;
                             spriteB.IsColliding = true;
+
+
+                         
+
+
+                          if (spriteA.type == SpriteInfo.typeState.Enemy)
+                          {
+                            gameObjects.Add(spriteA.gameObject);
+                            collideables.RemoveAt(i);
+                           
+                            
+                           
+
+                          }
+                         if (spriteB.type == SpriteInfo.typeState.Enemy)
+                         {
+                            gameObjects.Add(spriteB.gameObject);
+                            collideables.RemoveAt(j);
+
+
+
+                         }
+
+
+
+
+
+
                         }
 
                         
                     }
-                }
+                
               
 
                 //otherwise 
@@ -94,6 +124,9 @@ public class CollisionManager : MonoBehaviour
             }
         }
     }
+    
+
+    
 
     /// <summary>
     /// Equation for checking boxes
@@ -122,8 +155,15 @@ public class CollisionManager : MonoBehaviour
       
      }
 
+    public void dead()
+    {
+        for (int i = 0; i < gameObjects.Count; i++)
+        {
+            Destroy(gameObjects[i]);
+        }
+    }
 
-   bool Circle(SpriteInfo spriteA, SpriteInfo spriteB)
+    bool Circle(SpriteInfo spriteA, SpriteInfo spriteB)
     {
         //Pythagorean theorem
         double x= spriteB.center.x- spriteA.center.x;
