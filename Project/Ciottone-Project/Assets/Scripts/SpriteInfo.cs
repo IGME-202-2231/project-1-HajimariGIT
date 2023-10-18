@@ -19,7 +19,7 @@ public class SpriteInfo : MonoBehaviour
     public bool isPlayer;
     public bool isEnemy;
     public bool isEnemyBullet;
-    public Enemy enemy;
+    public Enemy enemy; 
 
     public enum typeState
     {
