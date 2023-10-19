@@ -145,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4951749546198967194, guid: 94e647b9334f8f24eb6283a39a8afb3e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.84
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 4951749546198967194, guid: 94e647b9334f8f24eb6283a39a8afb3e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -288,6 +288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collideables:
   - {fileID: 1998383150}
+  gameObjects: []
+  enemyManager: {fileID: 634172676}
 --- !u!114 &634172676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,6 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 4394295492164363228, guid: 6e8a848a3ee12874e9af8aa662104c68, type: 3}
+  enemyNew: {fileID: 4394295492164363228, guid: 6e8a848a3ee12874e9af8aa662104c68, type: 3}
   spriteInfo: {fileID: -3607915911283756714, guid: 6e8a848a3ee12874e9af8aa662104c68, type: 3}
   collisionManager: {fileID: 634172673}
   enemyRef: {fileID: 5704061141217774852, guid: 6e8a848a3ee12874e9af8aa662104c68, type: 3}
@@ -497,6 +500,8 @@ MonoBehaviour:
   isPlayer: 1
   isEnemy: 0
   isEnemyBullet: 0
+  enemy: {fileID: 0}
+  type: 0
 --- !u!212 &1998383151 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 9009276178853979762, guid: 41c986448e0e69f4fa11da06acd5e225, type: 3}

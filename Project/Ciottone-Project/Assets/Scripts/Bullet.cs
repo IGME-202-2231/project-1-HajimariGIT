@@ -15,6 +15,7 @@ public class Bullet : MonoBehaviour
    public CollisionManager collisionManager;
     SpriteInfo spriteInfo =  new SpriteInfo();
     bool isBullet;
+    public bool hit = false;
 
     public bool IsPlayerBullet
     {
@@ -55,9 +56,20 @@ public class Bullet : MonoBehaviour
             Vector3 bulletPosition = bulletList[i].transform.position;
             bulletPosition += direction * speed * Time.deltaTime;
             bulletList[i].transform.position = bulletPosition;
+            Bullet check = bulletList[i].GetComponent<Bullet>();
 
             // Check if the bullet is above the camera's view
             if (bulletPosition.y > totalCamheight / 2f)
+            {
+                // Destroy the bullet when it goes out of the camera's view
+                SpriteInfo sprite = bulletList[i].GetComponent<SpriteInfo>();
+                Destroy(bulletList[i]);
+                bulletList.RemoveAt(i);
+                collisionManager.collideables.Remove(sprite);
+                i--;
+            }
+
+            if (check.hit )
             {
                 // Destroy the bullet when it goes out of the camera's view
                 SpriteInfo sprite = bulletList[i].GetComponent<SpriteInfo>();

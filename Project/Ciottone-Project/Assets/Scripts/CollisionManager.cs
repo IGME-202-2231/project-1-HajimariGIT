@@ -13,6 +13,8 @@ public class CollisionManager : MonoBehaviour
     bool control=true;
     public List<GameObject> gameObjects = new List<GameObject>();
     public EnemyManager enemyManager = new EnemyManager();
+    public score scoreCount = new score();
+    Bullet bulletPrefab = new Bullet();
     //controls text
 
     // Start is called before the first frame update
@@ -94,6 +96,9 @@ public class CollisionManager : MonoBehaviour
                             gameObjects.Add(spriteA.gameObject);
                             collideables.RemoveAt(i);
                             enemyManager.enemies.Remove(spriteA.gameObject);
+                            scoreCount.scoreIndex++;
+                           
+                            
                            
                             
                            
@@ -104,6 +109,7 @@ public class CollisionManager : MonoBehaviour
                             gameObjects.Add(spriteB.gameObject);
                             collideables.RemoveAt(j);
                             enemyManager.enemies.Remove(spriteA.gameObject);
+                            scoreCount.scoreIndex++;
 
 
 
