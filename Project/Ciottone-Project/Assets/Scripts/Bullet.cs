@@ -6,7 +6,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] GameObject bulletIntake;
-    [SerializeField] float speed = 13f;
+    [SerializeField] float speed = 17f;
     [SerializeField] GameObject spawn;
     private bool bulletInTravel;
    public List<GameObject> bulletList = new List<GameObject>();
@@ -59,16 +59,15 @@ public class Bullet : MonoBehaviour
 
         for (int i = 0; i < bulletList.Count; i++)
         {
-            Vector3 direction = Vector3.up; // Move in the y-direction
+            Vector3 direction = Vector3.up; 
             Vector3 bulletPosition = bulletList[i].transform.position;
             bulletPosition += direction * speed * Time.deltaTime;
             bulletList[i].transform.position = bulletPosition;
             Bullet check = bulletList[i].GetComponent<Bullet>();
 
-            // Check if the bullet is above the camera's view
-            if (bulletPosition.y > player.transform.position.y +5 )
+            if (bulletPosition.y > player.transform.position.y + 6f )
             {
-                // Destroy the bullet when it goes out of the camera's view
+             
                 SpriteInfo sprite = bulletList[i].GetComponent<SpriteInfo>();
                 Destroy(bulletList[i]);
                 bulletList.RemoveAt(i);
@@ -103,7 +102,7 @@ public class Bullet : MonoBehaviour
         {
             if (on == true)
             {
-                // Destroy the bullet when it goes out of the camera's view
+                
                 SpriteInfo sprite = bulletList[i].GetComponent<SpriteInfo>();
                 Destroy(bulletList[i]);
                 bulletList.RemoveAt(i);

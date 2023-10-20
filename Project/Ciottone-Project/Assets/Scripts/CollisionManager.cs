@@ -16,6 +16,7 @@ public class CollisionManager : MonoBehaviour
     public EnemyManager enemyManager;// = new EnemyManager();
     public score scoreCount;
     public Bullet bulletPrefab;
+    LifeManager lifeManager;
     //controls text
 
     // Start is called before the first frame update
@@ -103,7 +104,7 @@ public class CollisionManager : MonoBehaviour
                             collideables.RemoveAt(i);
                             enemyManager.enemies.Remove(spriteA.gameObject);
                             
-                             scoreCount.scoreIndex++;
+                            scoreCount.scoreIndex++;
 
 
                           
@@ -149,12 +150,30 @@ public class CollisionManager : MonoBehaviour
 
                         
                     }
-                
-              
+
+
+                if (spriteA.type == SpriteInfo.typeState.Player && spriteB.type == SpriteInfo.typeState.Enemy || (spriteB.type == SpriteInfo.typeState.Player && spriteA.type == SpriteInfo.typeState.Enemy))
+                {
+                    Debug.Log("hi");
+                    if (spriteA.type == SpriteInfo.typeState.Enemy)
+                    {
+                        gameObjects.Add (spriteA.gameObject);
+                        lifeManager.lifeList.RemoveAt(i);
+                        
+                    }
+
+                    if (spriteB.type == SpriteInfo.typeState.Enemy)
+                    {
+                       gameObjects.Add(spriteA.gameObject);
+                        lifeManager.lifeList.RemoveAt(j);
+                    }
+                }
+
+
 
                 //otherwise 
 
-                
+
             }
         }
     }

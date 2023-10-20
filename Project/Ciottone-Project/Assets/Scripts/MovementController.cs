@@ -14,8 +14,8 @@ public class MovementController : MonoBehaviour
     private float totalCamwidth;
     float x;
     private float y;
-    float accel = 10;
-    float deccel=2;
+    float accel = 15;
+    float deccel=5;
     
 
     void Start()
@@ -31,26 +31,28 @@ public class MovementController : MonoBehaviour
     void Update()
     {
 
+        Vector3 current = transform.position;
 
     
 
-        if (transform.position.y > totalCamheight / 2f + .5)
+        if (current.y < -6.13)
         {
-            transform.position = new Vector3(transform.position.x, totalCamheight / 2f +.5f, transform.position.z);
+            current.y = -6.13f;
         }
-        else if (transform.position.y < -totalCamheight / 2f + .5)
+        else if (current.y > 4.7)
         {
-            transform.position = new Vector3(transform.position.x, -totalCamheight / 2f + .5f, transform.position.z);
+            current.y = 4.7f;
         }
 
-        if (transform.position.x > totalCamwidth / 2f + .5)
+        if (current.x > 12.82)
         {
-            transform.position = new Vector3(totalCamwidth / 2f + 5f, transform.position.y, transform.position.z);
+            current.x = 12.82f;
         }
-        else if (transform.position.x < -totalCamwidth / 2f + .5)
+        else if (current.x < -14.08)
         {
-            transform.position = new Vector3(-totalCamwidth / 2f + 5f, transform.position.y, transform.position.z);
+            current.x = -14.08f;
         }
+        transform.position = current;
 
 
         Vector3 direction = new Vector3(0, 0, 0);
@@ -88,10 +90,7 @@ public class MovementController : MonoBehaviour
         {
             velocity -= velocity * deccel * Time.deltaTime;
 
-            if(velocity.magnitude <0.1)
-            {
-                velocity = Vector3.zero;
-            }
+            
         }
 
 
