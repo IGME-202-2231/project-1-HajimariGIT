@@ -65,7 +65,7 @@ public class Bullet : MonoBehaviour
             bulletList[i].transform.position = bulletPosition;
             Bullet check = bulletList[i].GetComponent<Bullet>();
 
-            if (bulletPosition.y > player.transform.position.y + 6f )
+            if (bulletPosition.y > player.transform.position.y + 8f )
             {
              
                 SpriteInfo sprite = bulletList[i].GetComponent<SpriteInfo>();

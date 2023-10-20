@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     public int health;
     private float totalCamwidth;
     private float totalCamheight;
+    HealthManager healthManager;
 
 
     public int Number
@@ -39,7 +40,7 @@ public class Enemy : MonoBehaviour
     {
         ///abilltiy determinds spawn 
         /////random direction via vector
-        speed = Random.Range(5f, 8f);
+        speed = Random.Range(5f, 6.8f);
  
         Vector3 move = transform.position;
         float y = move.y - speed * Time.deltaTime;
@@ -47,9 +48,11 @@ public class Enemy : MonoBehaviour
 
 
        
-         if (transform.position.y < -totalCamheight / 2f)
+         if (transform.position.y <= -9)
          {
             transform.position = new Vector3(transform.position.x, totalCamheight / 2f, transform.position.z);
+            
+
          }
 
         

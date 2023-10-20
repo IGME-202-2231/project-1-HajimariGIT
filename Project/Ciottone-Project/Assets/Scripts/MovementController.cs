@@ -14,7 +14,7 @@ public class MovementController : MonoBehaviour
     private float totalCamwidth;
     float x;
     private float y;
-    float accel = 15;
+    float accel = 10;
     float deccel=5;
     
 
@@ -35,22 +35,22 @@ public class MovementController : MonoBehaviour
 
     
 
-        if (current.y < -6.13)
+        if (current.y < -10.8)
         {
-            current.y = -6.13f;
+            current.y = -10.8f;
         }
-        else if (current.y > 4.7)
+        else if (current.y > 10.44)
         {
-            current.y = 4.7f;
+            current.y = 10.44f;
         }
 
-        if (current.x > 12.82)
+        if (current.x > 24.96)
         {
-            current.x = 12.82f;
+            current.x = 24.96f;
         }
-        else if (current.x < -14.08)
+        else if (current.x < -25.53)
         {
-            current.x = -14.08f;
+            current.x = -25.53f;
         }
         transform.position = current;
 

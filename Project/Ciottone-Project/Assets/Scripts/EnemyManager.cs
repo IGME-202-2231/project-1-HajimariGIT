@@ -14,6 +14,8 @@ public class EnemyManager : MonoBehaviour
     Vector3 spawnPos;
     private float totalCamheight;
     private float totalCamwidth;
+    public LifeManager healthManager;
+    public int counter = 7; 
 
 
     // Start is called before the first frame update
@@ -25,7 +27,8 @@ public class EnemyManager : MonoBehaviour
         for (int i = 0; i < spawnNum; i++)
         {
             spawnPos.x = Random.Range(-10, 10);
-            spawnPos.y = Random.Range(6, 30);
+            spawnPos.y = Random.Range(6, 50);
+            spawnPos.z = 0;
 
             enemy = Instantiate(enemy, spawnPos, Quaternion.identity);
             enemies.Add(enemy);
@@ -49,15 +52,28 @@ public class EnemyManager : MonoBehaviour
                 Vector3 SpawnNew = new Vector3();
                 SpawnNew.x = Random.Range(-10, 10);
                 SpawnNew.y = Random.Range(6, 20);
+                SpawnNew.z = 0;
                 NewEnemy = Instantiate(enemyNew, SpawnNew, Quaternion.identity);
                 enemies.Add(NewEnemy);
                 SpriteInfo NewSprite = NewEnemy.GetComponent<SpriteInfo>();
                 collisionManager.collideables.Add(NewSprite);
+                SpawnNew.z = 0;
                 SpawnNew.x = Random.Range(-10,10);
                 SpawnNew.y = Random.Range(6, 20);
+                SpawnNew.z = 0;
+                
 
 
 
+            }
+        }
+
+        foreach (GameObject enemy in enemies)
+        {
+            if ((enemy.transform.position.y <= -8.99))
+            {
+                
+                counter = counter - 1;
             }
         }
 

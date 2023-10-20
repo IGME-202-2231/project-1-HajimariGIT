@@ -152,23 +152,7 @@ public class CollisionManager : MonoBehaviour
                     }
 
 
-                if (spriteA.type == SpriteInfo.typeState.Player && spriteB.type == SpriteInfo.typeState.Enemy || (spriteB.type == SpriteInfo.typeState.Player && spriteA.type == SpriteInfo.typeState.Enemy))
-                {
-                    Debug.Log("hi");
-                    if (spriteA.type == SpriteInfo.typeState.Enemy)
-                    {
-                        gameObjects.Add (spriteA.gameObject);
-                        lifeManager.lifeList.RemoveAt(i);
-                        
-                    }
-
-                    if (spriteB.type == SpriteInfo.typeState.Enemy)
-                    {
-                       gameObjects.Add(spriteA.gameObject);
-                        lifeManager.lifeList.RemoveAt(j);
-                    }
-                }
-
+              
 
 
                 //otherwise 
