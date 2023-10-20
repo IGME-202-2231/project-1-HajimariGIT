@@ -48,6 +48,9 @@ public class Bullet : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 spawnPos = spawn.transform.position;
+            spawnPos.x = spawnPos.x + .5f;
+            spawnPos.y = spawnPos.y +2;
+
             GameObject bullet = Instantiate(bulletIntake, spawnPos, Quaternion.identity);
             bulletList.Add(bullet);
             SpriteInfo bulletSpriteInfo = bullet.GetComponent<SpriteInfo>();

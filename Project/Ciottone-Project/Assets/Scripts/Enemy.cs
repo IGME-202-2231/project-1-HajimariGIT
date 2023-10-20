@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     private float totalCamwidth;
     private float totalCamheight;
     HealthManager healthManager;
+    float type;
 
 
     public int Number
@@ -40,6 +41,7 @@ public class Enemy : MonoBehaviour
     {
         ///abilltiy determinds spawn 
         /////random direction via vector
+        ///
         speed = Random.Range(5f, 6.8f);
  
         Vector3 move = transform.position;

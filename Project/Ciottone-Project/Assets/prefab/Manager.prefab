@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5938942705562729078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4193019372779932389}
+  - component: {fileID: 8315584571707507023}
+  - component: {fileID: 8341840930717794451}
+  - component: {fileID: 3535188361506876879}
+  - component: {fileID: 5412142133378477751}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4193019372779932389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5938942705562729078}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.17, y: 2.5, z: -0.08564862}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8315584571707507023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5938942705562729078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 5a9582ad4127d5d43b97bea21595c820, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &8341840930717794451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5938942705562729078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0602d5098b9ab3469d0b35fcc3fb928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collideables:
+  - {fileID: 0}
+  gameObjects: []
+  enemyManager: {fileID: 3535188361506876879}
+  scoreCount: {fileID: 0}
+  bulletPrefab: {fileID: 0}
+--- !u!114 &3535188361506876879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5938942705562729078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d545572de6f9a48a0175960e72b4b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 4394295492164363228, guid: 6e8a848a3ee12874e9af8aa662104c68, type: 3}
+  enemyNew: {fileID: 4394295492164363228, guid: 6e8a848a3ee12874e9af8aa662104c68, type: 3}
+  enemyTwo: {fileID: 3722287908292942295, guid: a32eba3618d6faf4191a0edd6dca8170, type: 3}
+  spriteInfo: {fileID: -3607915911283756714, guid: 6e8a848a3ee12874e9af8aa662104c68, type: 3}
+  collisionManager: {fileID: 8341840930717794451}
+  enemyRef: {fileID: 5704061141217774852, guid: 6e8a848a3ee12874e9af8aa662104c68, type: 3}
+  enemies: []
+  spawnNum: 10
+  healthManager: {fileID: 5412142133378477751}
+  counter: 7
+  control: 0
+--- !u!114 &5412142133378477751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5938942705562729078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c01b904a4cbc164aae5ba22e6fc00b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeList: []
+  Life: {fileID: 7732904306321403638, guid: 7f2074c6cd5a530458cc6b6db1516526, type: 3}
+  enemyManager: {fileID: 3535188361506876879}

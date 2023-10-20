@@ -79,37 +79,37 @@ public class LifeManager : MonoBehaviour
 
     public void GameOver()
     {
-       if(enemyManager.counter == 30 )
+       if(enemyManager.counter == 6 )
        {
             Debug.Log("hi");
             lifeList.Remove(HeartSeven);
             Destroy(HeartSeven);
        }
 
-        if (enemyManager.counter == 25)
+        if (enemyManager.counter == 5)
         {
             lifeList.Remove(HeartSix);
             Destroy(HeartSix);
         }
 
-        if (enemyManager.counter == 20)
+        if (enemyManager.counter == 4)
         {
             lifeList.Remove(HeartFive);
             Destroy(HeartFive);
         }
 
-        if (enemyManager.counter == 15)
+        if (enemyManager.counter == 3)
         {
             lifeList.Remove(HeartFour);
             Destroy(HeartFour);
         }
 
-        if (enemyManager.counter == 10)
+        if (enemyManager.counter == 2)
         {
             lifeList.Remove(HeartThree);
             Destroy(HeartThree);
         }
-        if (enemyManager.counter == 5)
+        if (enemyManager.counter == 1)
         {
             lifeList.Remove(HeartTwo);
             Destroy(HeartTwo);
@@ -118,6 +118,24 @@ public class LifeManager : MonoBehaviour
         {
             lifeList.Remove(HeartOne);
             Destroy(HeartOne);
+
+            GameObject[] allGameObjects = FindObjectsOfType<GameObject>();
+
+          
+            foreach (GameObject obj in allGameObjects)
+            {
+              
+                MonoBehaviour[] scripts = obj.GetComponents<MonoBehaviour>();
+                foreach (MonoBehaviour script in scripts)
+                {
+                    script.enabled = false;
+                }
+
+                
+                Destroy(obj);
+            }
+
+
         }
     }
 
