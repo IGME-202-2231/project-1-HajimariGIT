@@ -10,7 +10,7 @@ public class EnemyManager : MonoBehaviour
     public CollisionManager collisionManager;
     public Enemy enemyRef;
     public List<GameObject> enemies;
-    public int spawnNum = 10;
+    public int spawnNum = 20;
     Vector3 spawnPos;
     private float totalCamheight;
     private float totalCamwidth;
@@ -25,7 +25,7 @@ public class EnemyManager : MonoBehaviour
         for (int i = 0; i < spawnNum; i++)
         {
             spawnPos.x = Random.Range(-10, 10);
-            spawnPos.y = Random.Range(6, 20);
+            spawnPos.y = Random.Range(6, 30);
 
             enemy = Instantiate(enemy, spawnPos, Quaternion.identity);
             enemies.Add(enemy);
@@ -39,7 +39,7 @@ public class EnemyManager : MonoBehaviour
     void Update()
     {
 
-        if (enemies.Count < 1)
+        if (enemies.Count < 4)
         {
 
 

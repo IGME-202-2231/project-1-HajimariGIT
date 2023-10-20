@@ -29,7 +29,9 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         spawnPos = spawn.transform.position;
-       
+        totalCamheight = 2f * Camera.main.orthographicSize;
+        totalCamwidth = totalCamheight * Camera.main.aspect;
+
     }
 
     // Update is called once per frame
@@ -37,6 +39,7 @@ public class Enemy : MonoBehaviour
     {
         ///abilltiy determinds spawn 
         /////random direction via vector
+        speed = Random.Range(5f, 8f);
  
         Vector3 move = transform.position;
         float y = move.y - speed * Time.deltaTime;

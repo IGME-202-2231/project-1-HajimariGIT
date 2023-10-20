@@ -9,13 +9,17 @@ public class Bullet : MonoBehaviour
     [SerializeField] float speed = 13f;
     [SerializeField] GameObject spawn;
     private bool bulletInTravel;
-    List<GameObject> bulletList = new List<GameObject>();
+   public List<GameObject> bulletList = new List<GameObject>();
     private float totalCamheight;
     private float totalCamwidth;
    public CollisionManager collisionManager;
-    SpriteInfo spriteInfo =  new SpriteInfo();
+    SpriteInfo spriteInfo;
     bool isBullet;
     public bool hit = false;
+    EnemyManager enemy;
+    public int bulletFired;
+    public bool on = false;
+    public GameObject player;
 
     public bool IsPlayerBullet
     {
@@ -38,7 +42,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+      
 
 
         if (Input.GetMouseButtonDown(0))
@@ -48,6 +52,9 @@ public class Bullet : MonoBehaviour
             bulletList.Add(bullet);
             SpriteInfo bulletSpriteInfo = bullet.GetComponent<SpriteInfo>();
             collisionManager.AddSprite(bulletSpriteInfo);
+            bulletFired = bulletFired + 1;
+
+           
         }
 
         for (int i = 0; i < bulletList.Count; i++)
@@ -59,7 +66,7 @@ public class Bullet : MonoBehaviour
             Bullet check = bulletList[i].GetComponent<Bullet>();
 
             // Check if the bullet is above the camera's view
-            if (bulletPosition.y > totalCamheight / 2f)
+            if (bulletPosition.y > player.transform.position.y +5 )
             {
                 // Destroy the bullet when it goes out of the camera's view
                 SpriteInfo sprite = bulletList[i].GetComponent<SpriteInfo>();
@@ -69,48 +76,46 @@ public class Bullet : MonoBehaviour
                 i--;
             }
 
-            if (check.hit )
-            {
-                // Destroy the bullet when it goes out of the camera's view
-                SpriteInfo sprite = bulletList[i].GetComponent<SpriteInfo>();
-                Destroy(bulletList[i]);
-                bulletList.RemoveAt(i);
-                collisionManager.collideables.Remove(sprite);
-                i--;
-            }
+
+
+          
+
+
+
+
+
 
             // BulletCleanUp();
         }
 
-        /*public void BulletCleanUp()
-        {
-          for(int i =0; i < bulletList.Count; i++)
-           {
-                if (bulletList[i].transform.position.y> totalCamheight / 2f)
-                {
-                    Destroy(bulletList[i]);
-                }
-                else if (bulletList[i].transform.position.y < -totalCamheight / 2f)
-                {
-                    Destroy(bulletList[i]);
-                }
-
-                if (bulletList[i].transform.position.x > totalCamwidth / 2f)
-                {
-                    Destroy(bulletList[i]);
-                }
-                else if (bulletList[i].transform.position.x < -totalCamwidth / 2f)
-                {
-                    Destroy(bulletList[i]);
-                }
-
-            }
+        BulletCleanUp();
 
 
-        }*/
+
+
+
 
     }
 
+    void BulletCleanUp()
+    {
+        for (int i = 0; i < bulletList.Count; i++)
+        {
+            if (on == true)
+            {
+                // Destroy the bullet when it goes out of the camera's view
+                SpriteInfo sprite = bulletList[i].GetComponent<SpriteInfo>();
+                Destroy(bulletList[i]);
+                bulletList.RemoveAt(i);
+                collisionManager.collideables.Remove(sprite);
+                i--;
+            }
+          
+
+        }
+
+
+    }
 
 
    

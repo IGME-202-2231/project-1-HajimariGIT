@@ -12,7 +12,7 @@ public class SpriteInfo : MonoBehaviour
     //size of rectangle
     [SerializeField] Vector2 ractSize = Vector2.one;
     //refrebce if needed
-    CollisionManager test = new CollisionManager();
+    CollisionManager test;// = new CollisionManager();
     bool isCollidable=true; 
     //make enums
     public bool isBullet;

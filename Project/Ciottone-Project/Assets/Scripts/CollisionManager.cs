@@ -3,18 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class CollisionManager : MonoBehaviour
 {
     //controls collidables on screen and stores
     [SerializeField]
-    public List<SpriteInfo> collideables = new List<SpriteInfo>();
+    public List<SpriteInfo> collideables;
     //contros what equation to use
     bool control=true;
     public List<GameObject> gameObjects = new List<GameObject>();
-    public EnemyManager enemyManager = new EnemyManager();
-    public score scoreCount = new score();
-    Bullet bulletPrefab = new Bullet();
+    public EnemyManager enemyManager;// = new EnemyManager();
+    public score scoreCount;
+    public Bullet bulletPrefab;
     //controls text
 
     // Start is called before the first frame update
@@ -88,32 +89,56 @@ public class CollisionManager : MonoBehaviour
                             spriteB.IsColliding = true;
 
 
+
+
+
+
                          
 
 
                           if (spriteA.type == SpriteInfo.typeState.Enemy)
                           {
+                           
                             gameObjects.Add(spriteA.gameObject);
                             collideables.RemoveAt(i);
                             enemyManager.enemies.Remove(spriteA.gameObject);
-                            scoreCount.scoreIndex++;
-                           
                             
-                           
-                            
-                           
+                             scoreCount.scoreIndex++;
 
-                          }
-                         if (spriteB.type == SpriteInfo.typeState.Enemy)
-                         {
+
+                          
+
+
+
+
+
+
+
+
+                        }
+
+                          if (spriteB.type == SpriteInfo.typeState.Enemy)
+                          {
+                          
                             gameObjects.Add(spriteB.gameObject);
                             collideables.RemoveAt(j);
-                            enemyManager.enemies.Remove(spriteA.gameObject);
+                            enemyManager.enemies.Remove(spriteB.gameObject);
                             scoreCount.scoreIndex++;
 
+                           
 
 
-                         }
+
+
+
+
+
+
+                        }
+
+                    
+
+
 
 
 

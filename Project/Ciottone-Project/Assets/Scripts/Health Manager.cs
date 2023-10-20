@@ -6,10 +6,10 @@ public class HealthManager : MonoBehaviour
 
 {
 
-    List<GameObject> gameObjects = new List<GameObject>();
-    CollisionManager collisionManager = new CollisionManager();
-    SpriteInfo spriteInfo = new SpriteInfo();
-    Enemy enemy = new Enemy();
+    List<GameObject> gameObjects;
+    CollisionManager collisionManager;
+    SpriteInfo spriteInfo;
+    Enemy enemy;
     // Start is called before the first frame update
     void Start()
     {

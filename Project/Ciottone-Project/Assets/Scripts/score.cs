@@ -5,7 +5,7 @@ using UnityEngine;
 public class score : MonoBehaviour
 {
     // Start is called before the first frame update
-    public TextMesh scoreSprite = new TextMesh();
+    public TextMesh scoreSprite;
     public float scoreIndex = 0;
     void Start()
     {
