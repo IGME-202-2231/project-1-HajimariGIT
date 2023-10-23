@@ -28,26 +28,26 @@ public class LifeManager : MonoBehaviour
     void Start()
     {
 
-        SpawnZero.x = -25.71f;
-        SpawnZero.y = -12.38f;
+        SpawnZero.x = -20.12f;
+        SpawnZero.y = -9.96f;
 
-        SpawnOne.x = -23.74f;
-        SpawnOne.y = -12.38f;
+        SpawnOne.x = -18.35f;
+        SpawnOne.y = -9.98f;
 
-        SpawnTwo.x = -21.74f ;
-        SpawnTwo.y = -12.38f;
+        SpawnTwo.x = -16.58f;
+        SpawnTwo.y = -9.93f;
 
-        SpawnThree.x = -19.85f;
-        SpawnThree.y = -12.38f;
+        SpawnThree.x = -14.78f;
+        SpawnThree.y = -9.88f;
 
-        SpawnFour.x = -17.87f;
-        SpawnFour.y = -12.38f;
+        SpawnFour.x = -13.11f;
+        SpawnFour.y = -9.87f;
 
-        SpawnFive.x = -15.97f;
-        SpawnFive.y = -12.38f;
+        SpawnFive.x = -11.43f;
+        SpawnFive.y = -9.91f;
 
-        SpawnSix.x = -14.06f;
-        SpawnSix.y = -12.38f;
+        SpawnSix.x = -9.79f;
+        SpawnSix.y = -9.9f;
 
 
         HeartOne = Instantiate(Life, SpawnZero, Quaternion.identity);

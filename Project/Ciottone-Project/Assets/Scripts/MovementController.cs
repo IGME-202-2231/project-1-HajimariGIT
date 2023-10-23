@@ -14,8 +14,8 @@ public class MovementController : MonoBehaviour
     private float totalCamwidth;
     float x;
     private float y;
-    float accel = 10;
-    float deccel=5;
+    float accel = 16;
+    float deccel=3;
     
 
     void Start()
@@ -35,22 +35,22 @@ public class MovementController : MonoBehaviour
 
     
 
-        if (current.y < -10.8)
+        if (current.y < -9.1f)
         {
-            current.y = -10.8f;
+            current.y = -9.1f;
         }
-        else if (current.y > 10.44)
+        else if (current.y > 8.1f)
         {
-            current.y = 10.44f;
+            current.y = 8.1f;
         }
 
-        if (current.x > 24.96)
+        if (current.x > 19.7f)
         {
-            current.x = 24.96f;
+            current.x = 19.7f;
         }
-        else if (current.x < -25.53)
+        else if (current.x < -21.2)
         {
-            current.x = -25.53f;
+            current.x = -21.2f;
         }
         transform.position = current;
 
@@ -86,12 +86,7 @@ public class MovementController : MonoBehaviour
         velocity += direction * accel * Time.deltaTime;
 
 
-        if (direction == Vector3.zero)
-        {
-            velocity -= velocity * deccel * Time.deltaTime;
-
-            
-        }
+        
 
 
         transform.position += velocity * Time.deltaTime;

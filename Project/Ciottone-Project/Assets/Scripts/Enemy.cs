@@ -20,7 +20,8 @@ public class Enemy : MonoBehaviour
     private float totalCamwidth;
     private float totalCamheight;
     HealthManager healthManager;
-    float type;
+   public float type;
+    public EnemyManager enemyManager;
 
 
     public int Number
@@ -42,20 +43,54 @@ public class Enemy : MonoBehaviour
         ///abilltiy determinds spawn 
         /////random direction via vector
         ///
-        speed = Random.Range(5f, 6.8f);
- 
-        Vector3 move = transform.position;
-        float y = move.y - speed * Time.deltaTime;
-        transform.position = new Vector3(transform.position.x, y, transform.position.x);
+        if(type == 0)
+        {
+            float deltaX = speed * Time.deltaTime;
+            float deltaY = speed * Time.deltaTime;
+
+            // Update the game object's position to move diagonally to the right.
+            transform.Translate(new Vector3(deltaX, deltaY, 0));
+
+          
+        }
+        if(type == 1)
+        {
+            // Calculate the new position based on the current position and speed.
+            float deltaX = -speed * Time.deltaTime; // Negative X direction for left movement
+            float deltaY = -speed * Time.deltaTime; // Negative Y direction for downward movement
+
+            // Update the game object's position to move diagonally to the left and downward.
+            transform.Translate(new Vector3(deltaX, deltaY, 0));
+            if (transform.position.y <= -9)
+            {
+               
+                enemyManager.counter = 0;
+
+
+            }
+        }
+        else
+        {
+            speed = Random.Range(5f, 6.8f);
+
+            Vector3 move = transform.position;
+            float y = move.y - speed * Time.deltaTime;
+            transform.position = new Vector3(transform.position.x, y, transform.position.x);
+
+
+
+            if (transform.position.y <= -9)
+            {
+                transform.position = new Vector3(transform.position.x, Random.Range(25,70), transform.position.z);
+
+
+            }
+
+        }
+
 
 
        
-         if (transform.position.y <= -9)
-         {
-            transform.position = new Vector3(transform.position.x, totalCamheight / 2f, transform.position.z);
-            
-
-         }
 
         
 
