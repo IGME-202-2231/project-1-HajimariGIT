@@ -9,7 +9,7 @@ public class CollisionManager : MonoBehaviour
 {
     //controls collidables on screen and stores
     [SerializeField]
-    public List<SpriteInfo> collideables;
+    public List<SpriteInfo> collideableObjects;
     //controls what equation to use
     bool control=true;
     public List<GameObject> gameObjects = new List<GameObject>();
@@ -40,7 +40,7 @@ public class CollisionManager : MonoBehaviour
      
         //assign a staring value of false
 
-        foreach (SpriteInfo sprite in collideables)
+        foreach (SpriteInfo sprite in collideableObjects)
         {
             sprite.IsColliding = false;
         }
@@ -59,14 +59,14 @@ public class CollisionManager : MonoBehaviour
 
 
         //compare each object with each object 
-        for (int i = 0; i < collideables.Count - 1; i++)
+        for (int i = 0; i < collideableObjects.Count - 1; i++)
         {
 
-            for (int j = i + 1; j < collideables.Count; j++)
+            for (int j = i + 1; j < collideableObjects.Count; j++)
             {
                 //store them
-                SpriteInfo spriteA = collideables[i];
-                SpriteInfo spriteB = collideables[j];
+                SpriteInfo spriteA = collideableObjects[i];
+                SpriteInfo spriteB = collideableObjects[j];
 
                 //assume they are not collding 
                 bool isColliding = false;
@@ -97,7 +97,7 @@ public class CollisionManager : MonoBehaviour
                           {
                            
                             gameObjects.Add(spriteA.gameObject);
-                            collideables.RemoveAt(i);
+                            collideableObjects.RemoveAt(i);
                             enemyManager.enemies.Remove(spriteA.gameObject);
                             
                             scoreCount.scoreIndex++;
@@ -118,7 +118,7 @@ public class CollisionManager : MonoBehaviour
                           {
                           
                             gameObjects.Add(spriteB.gameObject);
-                            collideables.RemoveAt(j);
+                            collideableObjects.RemoveAt(j);
                             enemyManager.enemies.Remove(spriteB.gameObject);
                             scoreCount.scoreIndex++;
 
@@ -257,7 +257,7 @@ public class CollisionManager : MonoBehaviour
 
     public void AddSprite(SpriteInfo sprite)
     {
-        collideables.Add(sprite);
+        collideableObjects.Add(sprite);
     }
 
 
