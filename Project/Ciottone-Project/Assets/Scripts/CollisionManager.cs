@@ -61,7 +61,7 @@ public class CollisionManager : MonoBehaviour
     void onTouch()
     {
 
-
+         
         //compare each object with each object 
         for (int i = 0; i < collideables.Count - 1; i++)
         {
