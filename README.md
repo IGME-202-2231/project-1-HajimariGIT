@@ -51,6 +51,7 @@ you will get a game over instantly.
 ## Known Issues
 
 Possible bug where two enemies will spawn on top of each other.
+Github pages does not taake away lives correctly. Works on unity however.
 
 
 
