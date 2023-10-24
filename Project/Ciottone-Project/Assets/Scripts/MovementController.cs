@@ -7,13 +7,17 @@ public class MovementController : MonoBehaviour
 {
     // Start is called before the first frame update
     
+    //speed of charcter
     float speed = 4.0f;
+    //velocity 
     Vector3 velocity = Vector3.zero;
     private float totalCamheight;
     int test;
     private float totalCamwidth;
+    //contols positio
     float x;
     private float y;
+    //varible movemnet 
    public  float accel = 23;
     float deccel=3;
     
@@ -30,11 +34,11 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //sets 
         Vector3 objectPosition = transform.position;
 
 
-
+        //changes new vector to wrap
         if (objectPosition.y > totalCamheight / 2f)
         {
             objectPosition = new Vector3(objectPosition.x, -totalCamheight / 2f, objectPosition.z);
@@ -54,17 +58,17 @@ public class MovementController : MonoBehaviour
         }
 
 
-
+        //transforms
         transform.position = objectPosition;
 
     
 
-
+        //zero vector
         Vector3 direction = new Vector3(0, 0, 0);
 
 
 
-
+        //input controller
         if(Input.GetKey(KeyCode.W))
         {
             direction.y = 1;
@@ -87,13 +91,13 @@ public class MovementController : MonoBehaviour
         }
 
         
-
+        //controls velcity 
         velocity += direction * accel * Time.deltaTime;
 
 
         
 
-
+        //transfrokm according to velocity 
         transform.position += velocity * Time.deltaTime;
 
 

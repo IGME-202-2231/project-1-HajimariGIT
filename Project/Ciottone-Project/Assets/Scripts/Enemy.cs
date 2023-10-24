@@ -40,9 +40,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ///abilltiy determinds spawn 
-        /////random direction via vector
-        ///
+    
         if(type == 0)
         {
             float deltaX = speed * Time.deltaTime;

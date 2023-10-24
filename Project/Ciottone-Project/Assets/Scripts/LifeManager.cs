@@ -30,6 +30,8 @@ public class LifeManager : MonoBehaviour
     void Start()
     {
 
+        //makes hearts spawn and add to list accordingly
+
         SpawnZero.x = -20.12f;
         SpawnZero.y = -9.96f;
 
@@ -73,6 +75,7 @@ public class LifeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //controls heart decrease
         GameOver();
     }
 
@@ -81,6 +84,7 @@ public class LifeManager : MonoBehaviour
 
     public void GameOver()
     {
+        //destroys hearts in location via counter refrence
        if(enemyManager.counter == 6 )
        {
           
@@ -120,6 +124,7 @@ public class LifeManager : MonoBehaviour
         {
             lifeList.Remove(HeartOne);
             Destroy(HeartOne);
+            //load new scene 
 
             SceneManager.LoadScene("Game Over");
 
