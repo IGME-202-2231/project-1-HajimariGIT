@@ -20,8 +20,8 @@ public class Bullet : MonoBehaviour
     public int bulletFired;
     public bool on = false;
     public GameObject player;
-    private float buttonCooldown = 0.2f;
-    private float lastButtonPressTime = -0.50f;
+    private float buttonCooldown = 0.15f;
+    private float lastButtonPressTime = -0.20f;
 
 
     public bool IsPlayerBullet

@@ -32,7 +32,7 @@ public class EnemyManager : MonoBehaviour
 
             enemy = Instantiate(enemy, spawnPos, Quaternion.identity);
             enemies.Add(enemy);
-            // enemyRef.add
+            
             collisionManager.AddSprite(enemies[i].GetComponent<SpriteInfo>());
 
         }

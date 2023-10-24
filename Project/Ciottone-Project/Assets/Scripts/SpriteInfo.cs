@@ -5,16 +5,16 @@ using UnityEngine;
 public class SpriteInfo : MonoBehaviour
 {
 
-   //controls the render
+   
     [SerializeField] SpriteRenderer renderer;
-    //collider value
+    
     bool isColliding = false;
-    //size of rectangle
+    
     [SerializeField] Vector2 ractSize = Vector2.one;
-    //refrebce if needed
-    CollisionManager test;// = new CollisionManager();
+    
+    CollisionManager test;
     bool isCollidable=true; 
-    //make enums
+    
     public bool isBullet;
     public bool isPlayer;
     public bool isEnemy;

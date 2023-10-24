@@ -14,7 +14,7 @@ public class MovementController : MonoBehaviour
     private float totalCamwidth;
     float x;
     private float y;
-    float accel = 16;
+   public  float accel = 23;
     float deccel=3;
     
 
@@ -98,17 +98,6 @@ public class MovementController : MonoBehaviour
 
 
 
-        if (direction == Vector3.zero)
-        {
-            velocity -= velocity.normalized * deccel * Time.deltaTime;
-
-            // Ensure the velocity does not go below zero
-            if (velocity.magnitude < 0.1f)
-            {
-                velocity = Vector2.zero;
-            }
-        }
-       
 
 
 

@@ -10,14 +10,14 @@ public class CollisionManager : MonoBehaviour
     //controls collidables on screen and stores
     [SerializeField]
     public List<SpriteInfo> collideables;
-    //contros what equation to use
+    //controls what equation to use
     bool control=true;
     public List<GameObject> gameObjects = new List<GameObject>();
-    public EnemyManager enemyManager;// = new EnemyManager();
+    public EnemyManager enemyManager;
     public score scoreCount;
     public Bullet bulletPrefab;
     LifeManager lifeManager;
-    //controls text
+    
 
     // Start is called before the first frame update
    
@@ -36,12 +36,8 @@ public class CollisionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if the user presses right click 
-      
-
-        //check state/text and change accordingly
-
-
+         
+     
         //assign a staring value of false
 
         foreach (SpriteInfo sprite in collideables)
@@ -135,7 +131,7 @@ public class CollisionManager : MonoBehaviour
 
 
 
-                        }
+                          }
 
                     
 
@@ -155,7 +151,7 @@ public class CollisionManager : MonoBehaviour
               
 
 
-                //otherwise 
+                 
 
 
             }

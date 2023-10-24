@@ -48,18 +48,18 @@ public class Enemy : MonoBehaviour
             float deltaX = speed * Time.deltaTime;
             float deltaY = speed * Time.deltaTime;
 
-            // Update the game object's position to move diagonally to the right.
+           
             transform.Translate(new Vector3(deltaX, deltaY, 0));
 
           
         }
         if(type == 1)
         {
-            // Calculate the new position based on the current position and speed.
-            float deltaX = -speed * Time.deltaTime; // Negative X direction for left movement
-            float deltaY = -speed * Time.deltaTime; // Negative Y direction for downward movement
+           
+            float deltaX = -speed * Time.deltaTime; 
+            float deltaY = -speed * Time.deltaTime;
 
-            // Update the game object's position to move diagonally to the left and downward.
+            
             transform.Translate(new Vector3(deltaX, deltaY, 0));
             if (transform.position.y <= -9)
             {
