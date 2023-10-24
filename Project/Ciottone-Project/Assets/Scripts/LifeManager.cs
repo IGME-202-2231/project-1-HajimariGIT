@@ -9,6 +9,7 @@ public class LifeManager : MonoBehaviour
     // Start is called before the first frame update
     public List<GameObject> lifeList = new List<GameObject>();
     public GameObject Life;
+    //spawn locations
     Vector3 SpawnZero;
     Vector3 SpawnOne;
     Vector3 SpawnTwo;
@@ -16,6 +17,7 @@ public class LifeManager : MonoBehaviour
     Vector3 SpawnFour;
     Vector3 SpawnFive;
     Vector3 SpawnSix;
+    //game objects
     GameObject HeartOne;
     GameObject HeartTwo;
     GameObject HeartThree;
@@ -23,6 +25,7 @@ public class LifeManager : MonoBehaviour
     GameObject HeartFive;
     GameObject HeartSix;
     GameObject HeartSeven;
+    //refrence
     public EnemyManager enemyManager;
     
    
@@ -52,6 +55,7 @@ public class LifeManager : MonoBehaviour
         SpawnSix.x = -9.79f;
         SpawnSix.y = -9.9f;
 
+        //spawns
 
         HeartOne = Instantiate(Life, SpawnZero, Quaternion.identity);
         HeartTwo = Instantiate(Life, SpawnOne, Quaternion.identity);
@@ -60,6 +64,8 @@ public class LifeManager : MonoBehaviour
         HeartFive = Instantiate(Life, SpawnFour, Quaternion.identity);
         HeartSix = Instantiate(Life, SpawnFive, Quaternion.identity);
         HeartSeven = Instantiate(Life, SpawnSix, Quaternion.identity);
+
+        //adds to list 
 
         lifeList.Add(HeartOne);
         lifeList.Add(HeartTwo);
