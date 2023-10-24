@@ -31,28 +31,33 @@ public class MovementController : MonoBehaviour
     void Update()
     {
 
-        Vector3 current = transform.position;
+        Vector3 objectPosition = transform.position;
+
+
+
+        if (objectPosition.y > totalCamheight / 2f)
+        {
+            objectPosition = new Vector3(objectPosition.x, -totalCamheight / 2f, objectPosition.z);
+        }
+        else if (objectPosition.y < -totalCamheight / 2f)
+        {
+            objectPosition = new Vector3(objectPosition.x, totalCamheight / 2f, objectPosition.z);
+        }
+
+        if (objectPosition.x > totalCamwidth / 2f)
+        {
+            objectPosition = new Vector3(-totalCamwidth / 2f, objectPosition.y, objectPosition.z);
+        }
+        else if (objectPosition.x < -totalCamwidth / 2f)
+        {
+            objectPosition = new Vector3(totalCamwidth / 2f, objectPosition.y, objectPosition.z);
+        }
+
+
+
+        transform.position = objectPosition;
 
     
-
-        if (current.y < -9.1f)
-        {
-            current.y = -9.1f;
-        }
-        else if (current.y > 8.1f)
-        {
-            current.y = 8.1f;
-        }
-
-        if (current.x > 19.7f)
-        {
-            current.x = 19.7f;
-        }
-        else if (current.x < -21.2)
-        {
-            current.x = -21.2f;
-        }
-        transform.position = current;
 
 
         Vector3 direction = new Vector3(0, 0, 0);
@@ -93,9 +98,18 @@ public class MovementController : MonoBehaviour
 
 
 
+        if (direction == Vector3.zero)
+        {
+            velocity -= velocity.normalized * deccel * Time.deltaTime;
+
+            // Ensure the velocity does not go below zero
+            if (velocity.magnitude < 0.1f)
+            {
+                velocity = Vector2.zero;
+            }
+        }
        
 
-        
 
 
     }

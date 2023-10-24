@@ -63,7 +63,7 @@ public class Enemy : MonoBehaviour
             transform.Translate(new Vector3(deltaX, deltaY, 0));
             if (transform.position.y <= -9)
             {
-               
+                
                 enemyManager.counter = 0;
 
 

@@ -20,6 +20,9 @@ public class Bullet : MonoBehaviour
     public int bulletFired;
     public bool on = false;
     public GameObject player;
+    private float buttonCooldown = 0.2f;
+    private float lastButtonPressTime = -0.50f;
+
 
     public bool IsPlayerBullet
     {
@@ -45,7 +48,7 @@ public class Bullet : MonoBehaviour
       
 
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)  && Time.time - lastButtonPressTime >= buttonCooldown)
         {
             Vector3 spawnPos = spawn.transform.position;
             spawnPos.x = spawnPos.x + .5f;
@@ -56,8 +59,8 @@ public class Bullet : MonoBehaviour
             SpriteInfo bulletSpriteInfo = bullet.GetComponent<SpriteInfo>();
             collisionManager.AddSprite(bulletSpriteInfo);
             bulletFired = bulletFired + 1;
+            lastButtonPressTime = Time.time;
 
-           
         }
 
         for (int i = 0; i < bulletList.Count; i++)

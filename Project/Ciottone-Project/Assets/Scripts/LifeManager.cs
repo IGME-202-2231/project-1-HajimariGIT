@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.Android;
+using UnityEngine.SceneManagement;
+
 
 public class LifeManager : MonoBehaviour
 {
@@ -81,7 +83,7 @@ public class LifeManager : MonoBehaviour
     {
        if(enemyManager.counter == 6 )
        {
-            Debug.Log("hi");
+          
             lifeList.Remove(HeartSeven);
             Destroy(HeartSeven);
        }
@@ -119,21 +121,7 @@ public class LifeManager : MonoBehaviour
             lifeList.Remove(HeartOne);
             Destroy(HeartOne);
 
-            GameObject[] allGameObjects = FindObjectsOfType<GameObject>();
-
-          
-            foreach (GameObject obj in allGameObjects)
-            {
-              
-                MonoBehaviour[] scripts = obj.GetComponents<MonoBehaviour>();
-                foreach (MonoBehaviour script in scripts)
-                {
-                    script.enabled = false;
-                }
-
-                
-                Destroy(obj);
-            }
+            SceneManager.LoadScene("Game Over");
 
 
         }
