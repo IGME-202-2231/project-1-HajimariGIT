@@ -27,7 +27,7 @@ public class EnemyManager : MonoBehaviour
         for (int i = 0; i < spawnNum; i++)
         {
             spawnPos.x = Random.Range(-10, 10);
-            spawnPos.y = Random.Range(25, 80);
+            spawnPos.y = Random.Range(25, 80); 
             spawnPos.z = 0;
 
             enemy = Instantiate(enemy, spawnPos, Quaternion.identity);
